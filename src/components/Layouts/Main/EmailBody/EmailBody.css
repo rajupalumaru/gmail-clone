@@ -35,3 +35,13 @@
     box-shadow: 2px 2px 4px whitesmoke;
     cursor: pointer;
 }
+b {
+    margin-right:15px ;
+}
+.emailbody .emailbody-middle p {
+  
+    max-width: 700px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}

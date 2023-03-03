@@ -9,20 +9,24 @@ const EmailList = () => {
     <div className='emailList'>
       <EmailListSetting/>
       <EmailType/>
-      <EmailBody/>
-      <EmailBody/>
-      <EmailBody/>
-      <EmailBody/>
-      <EmailBody/>
-      <EmailBody/>
-      <EmailBody/>
-      <EmailBody/>
-      <EmailBody/>
-      <EmailBody/>
-      <EmailBody/>
-      <EmailBody/>
-      <EmailBody/>
-      <EmailBody/>
+      <EmailBody name="Raju Palumaru" subject='This is Subject' message='we are learing React Js.we are learing React Jswe are learing React Jswe are learing React Js.we are learing React Js.we are learing React Js.we are learing React Js.we are learing React Js we are learing React Js.we are learing React Js.we are learing React Js.we are learing React Js.we are learing React Js.we are learing React Js.we are learing React Js' time='2:30 PM'/>
+      <EmailBody name="Raju Palumaru" subject='This is Subject' message='we are learing React Js' time='2:30 PM'/>
+      <EmailBody name="Raju Palumaru" subject='This is Subject' message='we are learing React Js' time='2:30 PM'/>
+      <EmailBody name="Raju Palumaru" subject='This is Subject' message='we are learing React Js' time='2:30 PM'/>
+      <EmailBody name="Raju Palumaru" subject='This is Subject' message='we are learing React Js' time='2:30 PM'/>
+      <EmailBody name="Raju Palumaru" subject='This is Subject' message='we are learing React Js' time='2:30 PM'/>
+      <EmailBody name="Raju Palumaru" subject='This is Subject' message='we are learing React Js' time='2:30 PM'/>
+      <EmailBody name="Raju Palumaru" subject='This is Subject' message='we are learing React Js' time='2:30 PM'/>
+      <EmailBody name="Raju Palumaru" subject='This is Subject' message='we are learing React Js' time='2:30 PM'/>
+      <EmailBody name="Raju Palumaru" subject='This is Subject' message='we are learing React Js' time='2:30 PM'/>
+      <EmailBody name="Raju Palumaru" subject='This is Subject' message='we are learing React Js' time='2:30 PM'/>
+      <EmailBody name="Raju Palumaru" subject='This is Subject' message='we are learing React Js' time='2:30 PM'/>
+      <EmailBody name="Raju Palumaru" subject='This is Subject' message='we are learing React Js' time='2:30 PM'/>
+      <EmailBody name="Raju Palumaru" subject='This is Subject' message='we are learing React Js' time='2:30 PM'/>
+      <EmailBody name="Raju Palumaru" subject='This is Subject' message='we are learing React Js' time='2:30 PM'/>
+     
+
+     
     </div>
   )
 }

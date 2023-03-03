@@ -3,25 +3,26 @@ import './EmailBody.css';
 import CheckBoxOutlineBlankIcon from '@mui/icons-material/CheckBoxOutlineBlank';
 import StarBorderIcon from '@mui/icons-material/StarBorder';
 import LabelIcon from '@mui/icons-material/Label';
+import { margin } from '@mui/system';
 
-const EmailBody = () => {
+const EmailBody = ({name,subject,message,time}) => {
     return (
         <div className='emailbody'>
             <div className='emailbody-left'>
                 <CheckBoxOutlineBlankIcon/>
                 <StarBorderIcon/>
                 <LabelIcon/>
-                <h4>Raju Palumaru</h4>
+                <h4>{name}</h4>
 
             </div>
             <div className='emailbody-middle'>
                 <div className='emailbody-middle-msg'>
-                    <p><b>Subject</b>This is message body</p>
+                    <p ><b>{subject}</b>{message}</p>
                 </div>
 
             </div>
             <div className='emailbody-right'>
-                  <p>02:30 PM</p>
+                  <p>{time}</p>
             </div>
         </div>
     )
