@@ -15,8 +15,11 @@ import PhonelinkLockIcon from '@mui/icons-material/PhonelinkLock';
 import CreateIcon from '@mui/icons-material/Create';
 import MoreVertIcon from '@mui/icons-material/MoreVert';
 import DeleteIcon from '@mui/icons-material/Delete';
+import { useDispatch } from 'react-redux';
+import { closeSendMessage } from '../../../../redux/mailSilce';
 
 const Compose = () => {
+    const dispatch=useDispatch();
     return (
         <div className='compose'>
             <div className='compose-header'>
@@ -26,7 +29,7 @@ const Compose = () => {
                 <div className='compose-right'>
                     <MinimizeIcon/>
                     <OpenInFullIcon/>
-                    <CloseIcon/>
+                    <CloseIcon onClick={()=>dispatch(closeSendMessage())} />
 
                 </div>
             </div>

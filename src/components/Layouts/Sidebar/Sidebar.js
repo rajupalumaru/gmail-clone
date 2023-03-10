@@ -16,12 +16,15 @@ import KeyboardIcon from '@mui/icons-material/Keyboard';
 
 import './Sidebar.css';
 import SidebarOptions from '../SidebarOptions/SidebarOptions';
+import { useDispatch } from 'react-redux';
+import { openSendMessage } from '../../../redux/mailSilce';
 
 
 const Sidebar = () => {
+  const dispatch=useDispatch();
   return (
     <div className='sidebar'>
-      <Button startIcon={<AddIcon />} className='compose-btn'>Compose</Button>
+      <Button startIcon={<AddIcon />} className='compose-btn' onClick={()=>dispatch(openSendMessage())}>Compose</Button>
 
       <SidebarOptions Icon={InboxIcon} title='Indox' number='234' />
       <SidebarOptions Icon={StarRateIcon} title='Starred' number='500' />

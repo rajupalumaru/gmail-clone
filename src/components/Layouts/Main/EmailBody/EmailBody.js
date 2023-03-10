@@ -3,7 +3,6 @@ import './EmailBody.css';
 import CheckBoxOutlineBlankIcon from '@mui/icons-material/CheckBoxOutlineBlank';
 import StarBorderIcon from '@mui/icons-material/StarBorder';
 import LabelIcon from '@mui/icons-material/Label';
-import { margin } from '@mui/system';
 
 const EmailBody = ({name,subject,message,time}) => {
     return (
