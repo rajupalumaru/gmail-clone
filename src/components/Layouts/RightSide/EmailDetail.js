@@ -12,14 +12,17 @@ import LocalPrintshopIcon from '@mui/icons-material/LocalPrintshop';
 import LaunchIcon from '@mui/icons-material/Launch';
 import StarIcon from '@mui/icons-material/Star';
 import ReplyIcon from '@mui/icons-material/Reply';
+import { useHistory } from 'react-router-dom';
 
 const EmailDetail = () => {
+    const history=useHistory();
+
     return (
         <div className='email-deatils'>
             <div className='emailList-Settings'>
                 <div className='emailList-settingsLeft'>
                     <IconButton>
-                        <ArrowBackIcon />
+                        <ArrowBackIcon onClick={()=>history.push('/')} />
                     </IconButton>
                     <IconButton>
                         <ArrowDropDownIcon />

@@ -3,7 +3,8 @@ import { createSlice } from "@reduxjs/toolkit";
 export const mailSilce = createSlice({
     name: 'mail',
     initialState: {
-        sendMessageIsOpen: false
+        sendMessageIsOpen: false,
+        selectedMessage:null
     },
     reducers: {
         openSendMessage: (state) => {
@@ -12,12 +13,16 @@ export const mailSilce = createSlice({
         closeSendMessage: (state) => {
             state.sendMessageIsOpen = false
         },
+        openMessage: (state,action) => {
+            state.selectedMessage = action.payload
+        },
     },
 
 }) ;
-export const { openSendMessage, closeSendMessage } = mailSilce.actions;
+export const { openSendMessage, closeSendMessage ,openMessage} = mailSilce.actions;
 
 export const selectSendMessageIsOpen = (state) => state.mail.sendMessageIsOpen;
+export const selectedMail = (state) => state.mail.selectedMessage;
 
 export default mailSilce.reducer;
 

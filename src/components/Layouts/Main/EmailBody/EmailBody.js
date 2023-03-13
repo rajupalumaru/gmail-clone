@@ -3,14 +3,16 @@ import './EmailBody.css';
 import CheckBoxOutlineBlankIcon from '@mui/icons-material/CheckBoxOutlineBlank';
 import StarBorderIcon from '@mui/icons-material/StarBorder';
 import LabelIcon from '@mui/icons-material/Label';
+import { useHistory } from 'react-router-dom';
 
-const EmailBody = ({name,subject,message,time}) => {
+const EmailBody = ({ name, subject, message, time }) => {
+    const history = useHistory();
     return (
-        <div className='emailbody'>
+        <div className='emailbody' onClick={(e) => history.push('/mail')}>
             <div className='emailbody-left'>
-                <CheckBoxOutlineBlankIcon/>
-                <StarBorderIcon/>
-                <LabelIcon/>
+                <CheckBoxOutlineBlankIcon />
+                <StarBorderIcon />
+                <LabelIcon />
                 <h4>{name}</h4>
 
             </div>
@@ -21,7 +23,7 @@ const EmailBody = ({name,subject,message,time}) => {
 
             </div>
             <div className='emailbody-right'>
-                  <p>{time}</p>
+                <p>{time}</p>
             </div>
         </div>
     )
