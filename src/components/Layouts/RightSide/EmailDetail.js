@@ -1,5 +1,5 @@
 import { IconButton, Avatar } from '@mui/material'
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import './EmailDetails.css'
 import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown';
 import RefreshIcon from '@mui/icons-material/Refresh';
@@ -13,16 +13,28 @@ import LaunchIcon from '@mui/icons-material/Launch';
 import StarIcon from '@mui/icons-material/Star';
 import ReplyIcon from '@mui/icons-material/Reply';
 import { useHistory } from 'react-router-dom';
+import { useDispatch, useSelector } from 'react-redux';
+import { selectedMail } from '../../../redux/mailSilce';
 
 const EmailDetail = () => {
-    const history=useHistory();
+
+    const [data,setData]=useState('');
+    const mail = useSelector(selectedMail);
+
+    useEffect(()=>{
+        setData(mail);
+    },[data])
+
+    console.log(data,'data');
+
+    const history = useHistory();
 
     return (
         <div className='email-deatils'>
             <div className='emailList-Settings'>
                 <div className='emailList-settingsLeft'>
                     <IconButton>
-                        <ArrowBackIcon onClick={()=>history.push('/')} />
+                        <ArrowBackIcon onClick={() => history.push('/')} />
                     </IconButton>
                     <IconButton>
                         <ArrowDropDownIcon />
@@ -47,7 +59,7 @@ const EmailDetail = () => {
             <div className='emailDetail-message'>
                 <div className='emailDetails-header'>
                     <div className='emailDetails-headerLeft'>
-                        <h4>This is Subject</h4>
+                        <h4>{data.subject}</h4>
                         <LabelImportantIcon />
 
                     </div>
@@ -65,12 +77,12 @@ const EmailDetail = () => {
                         <IconButton>
                             <Avatar />
                         </IconButton>
-                        <h4>This is Subject</h4>
-                        <p>RajuPalumaru@gmail.com</p>
+                        <h4>{data.subject}</h4>
+                        <p>{data.name}</p>
 
                     </div>
                     <div className='emailDetails-middleHeaderRight'>
-                        <p>Mon,13 March 2023 10:30:30 GMT</p>
+                        <p>{data.time}</p>
                         <IconButton>
                             <StarIcon />
                         </IconButton>
@@ -84,7 +96,7 @@ const EmailDetail = () => {
 
                 </div>
                 <div className='emaildetails-body'>
-                    <p>This is Message body</p>
+                    <p>{data.message}</p>
                 </div>
             </div>
 

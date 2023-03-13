@@ -4,11 +4,25 @@ import CheckBoxOutlineBlankIcon from '@mui/icons-material/CheckBoxOutlineBlank';
 import StarBorderIcon from '@mui/icons-material/StarBorder';
 import LabelIcon from '@mui/icons-material/Label';
 import { useHistory } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
+import { openMessage } from '../../../../redux/mailSilce';
 
 const EmailBody = ({ name, subject, message, time }) => {
     const history = useHistory();
+    const dispatch = useDispatch();
+
+    const sentMail = () => {
+        dispatch(openMessage({
+            name,
+            subject,
+            message,
+            time
+        }))
+        history.push('/mail')
+    }
+    
     return (
-        <div className='emailbody' onClick={(e) => history.push('/mail')}>
+        <div className='emailbody' onClick={sentMail}>
             <div className='emailbody-left'>
                 <CheckBoxOutlineBlankIcon />
                 <StarBorderIcon />
