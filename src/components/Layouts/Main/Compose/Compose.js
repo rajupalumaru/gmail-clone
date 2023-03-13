@@ -15,10 +15,11 @@ import PhonelinkLockIcon from '@mui/icons-material/PhonelinkLock';
 import CreateIcon from '@mui/icons-material/Create';
 import MoreVertIcon from '@mui/icons-material/MoreVert';
 import DeleteIcon from '@mui/icons-material/Delete';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { closeSendMessage } from '../../../../redux/mailSilce';
 import db from '../../../../firebase';
 import firebase from 'firebase';
+import { selectUser } from '../../../../redux/userSlice';
 
 const Compose = () => {
 
@@ -27,6 +28,7 @@ const Compose = () => {
     const [message, setMessage] = useState("");
 
     const dispatch = useDispatch();
+    const user =useSelector(selectUser);
 
     const formSubmit = (e) => {
         e.preventDefault();
@@ -43,6 +45,8 @@ const Compose = () => {
         db.collection('emails').add({
             to,
             subject,
+            from:user.email,
+            fromName:user.displayName,
             message,
             timestamp:firebase.firestore.FieldValue.serverTimestamp(),
         });

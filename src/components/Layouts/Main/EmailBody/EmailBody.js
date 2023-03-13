@@ -7,7 +7,7 @@ import { useHistory } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { openMessage } from '../../../../redux/mailSilce';
 
-const EmailBody = ({ name, subject, message, time }) => {
+const EmailBody = ({ name, subject,email, message, time }) => {
     const history = useHistory();
     const dispatch = useDispatch();
 
@@ -16,6 +16,7 @@ const EmailBody = ({ name, subject, message, time }) => {
             name,
             subject,
             message,
+            email,
             time
         }))
         history.push('/mail')

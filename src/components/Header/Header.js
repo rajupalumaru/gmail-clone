@@ -8,8 +8,13 @@ import SettingsIcon from '@mui/icons-material/Settings';
 import AppsIcon from '@mui/icons-material/Apps';
 import { Avatar, IconButton } from '@mui/material';
 import './Header.css'
+import { useSelector } from 'react-redux';
+import { selectUser } from '../../redux/userSlice';
+import firebase from 'firebase';
 
 const Header = () => {
+    const user=useSelector(selectUser);
+    console.log(user.photoURL);
     return (
         <div className='header'>
             <div className='header-left'>
@@ -39,7 +44,7 @@ const Header = () => {
                 <IconButton>
                     <AppsIcon />
                 </IconButton>
-                <Avatar src='https://wallpaper.dog/large/5494425.jpg'/>
+                <Avatar src={user.photoURL} onClick={()=>firebase.auth().signOut()} ></Avatar>
             </div>
         </div>
     )

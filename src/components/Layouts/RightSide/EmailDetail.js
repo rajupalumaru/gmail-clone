@@ -77,8 +77,9 @@ const EmailDetail = () => {
                         <IconButton>
                             <Avatar />
                         </IconButton>
-                        <h4>{data.subject}</h4>
-                        <p>{data.name}</p>
+                        <h4>{data.name}</h4>
+                        <p>{data.email}</p>
+                       
 
                     </div>
                     <div className='emailDetails-middleHeaderRight'>

@@ -26,7 +26,7 @@ const EmailList = () => {
       {
         emails.map(({ id, data }) => {
           const date = new Date(data.timestamp.seconds * 1000 + data.timestamp.nanoseconds / 100000);
-          return <EmailBody key={id} name={data.to} subject={data.subject}
+          return <EmailBody key={id} name={data.fromName} email={data.from} subject={data.subject}
             message={data.message} time={date.toLocaleTimeString()} />
         })
       }
